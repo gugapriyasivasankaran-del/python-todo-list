@@ -16,30 +16,21 @@ A simple command-line to-do list built with Python. Tasks are saved to a JSON fi
 - Reading and writing JSON files
 - Using functions to organize code
 - Handling errors with try/except
-
 ## Future improvements
 - Due dates and priorities
 - A simple GUI version
-
 """Simple command-line to-do list. Tasks are saved in tasks.json."""
 import json
 import os
-
 FILE = "tasks.json"
-
-
 def load_tasks():
     if os.path.exists(FILE):
         with open(FILE, "r") as f:
             return json.load(f)
     return []
-
-
 def save_tasks(tasks):
     with open(FILE, "w") as f:
         json.dump(tasks, f, indent=2)
-
-
 def show_tasks(tasks):
     if not tasks:
         print("No tasks yet.")
@@ -47,8 +38,6 @@ def show_tasks(tasks):
     for i, t in enumerate(tasks, start=1):
         mark = "x" if t["done"] else " "
         print(f"{i}. [{mark}] {t['title']}")
-
-
 def main():
     tasks = load_tasks()
     while True:
@@ -80,6 +69,7 @@ def main():
             print("Goodbye!")
             break
         else:
-            print("Please choose 1-5.")if __name__ == "__main__":
+            print("Please choose 1-5.")
+if __name__ == "__main__":
     main()
 
