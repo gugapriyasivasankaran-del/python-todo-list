@@ -81,8 +81,6 @@ def main():
             break
         else:
             print("Please choose 1-5.")
-
-
 if __name__ == "__main__":
     main()
 
